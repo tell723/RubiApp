@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,104 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RubiApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zd1-mL-GkJ">
+                                <rect key="frame" x="20" y="70" width="335" height="30"/>
+                                <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <state key="normal" title="振り仮名を表示">
+                                    <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="showFuriganaButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="O7o-Dk-QSu"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="テキストを入力してください" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uv0-LC-YDc">
+                                <rect key="frame" x="20" y="166" width="335" height="431"/>
+                                <color key="backgroundColor" systemColor="systemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="FON-Bn-R35">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W42-xl-5JU">
+                                <rect key="frame" x="20" y="120" width="335" height="32"/>
+                                <segments>
+                                    <segment title="ひらがな"/>
+                                    <segment title="カタカナ"/>
+                                </segments>
+                                <connections>
+                                    <action selector="kanaSegmentTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="ZfE-YX-XWm"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="W42-xl-5JU" firstAttribute="top" secondItem="zd1-mL-GkJ" secondAttribute="bottom" constant="20" id="3J2-at-bDr"/>
+                            <constraint firstItem="zd1-mL-GkJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="5uN-dL-nBm"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="uv0-LC-YDc" secondAttribute="trailing" constant="20" id="7Tv-4h-UUd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zd1-mL-GkJ" secondAttribute="trailing" constant="20" id="87h-Ar-n9G"/>
+                            <constraint firstItem="FON-Bn-R35" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="8ES-BN-Ein"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="uv0-LC-YDc" secondAttribute="bottom" constant="70" id="LiF-F7-a2h"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="W42-xl-5JU" secondAttribute="trailing" constant="20" id="SAY-6G-Amy"/>
+                            <constraint firstItem="uv0-LC-YDc" firstAttribute="top" secondItem="W42-xl-5JU" secondAttribute="bottom" constant="15" id="Utv-41-aT8"/>
+                            <constraint firstItem="W42-xl-5JU" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cma-iB-23s"/>
+                            <constraint firstItem="FON-Bn-R35" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ebO-5R-a0j"/>
+                            <constraint firstItem="zd1-mL-GkJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="mfd-De-NHT"/>
+                            <constraint firstItem="uv0-LC-YDc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="uf2-Fg-2mQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicatorView" destination="FON-Bn-R35" id="JJj-im-P1H"/>
+                        <outlet property="originalTextView" destination="uv0-LC-YDc" id="X0H-0A-MEn"/>
+                        <outlet property="showFuriganaButton" destination="zd1-mL-GkJ" id="uBQ-zz-7B5"/>
+                        <segue destination="5LF-Zg-nt6" kind="show" identifier="toFuriganaVC" id="ka2-8K-9C2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="137.18140929535232"/>
+        </scene>
+        <!--Furigana View Controller-->
+        <scene sceneID="9GM-wk-jCH">
+            <objects>
+                <viewController id="5LF-Zg-nt6" customClass="FuriganaViewController" customModule="RubiApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="J47-wT-YWK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="J8v-mv-Pf9">
+                                <rect key="frame" x="20" y="70" width="335" height="507"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="J8v-mv-Pf9" firstAttribute="leading" secondItem="BbV-RK-Y32" secondAttribute="leading" constant="20" id="20s-48-TAA"/>
+                            <constraint firstItem="BbV-RK-Y32" firstAttribute="bottom" secondItem="J8v-mv-Pf9" secondAttribute="bottom" constant="70" id="TMc-v7-806"/>
+                            <constraint firstItem="J8v-mv-Pf9" firstAttribute="top" secondItem="BbV-RK-Y32" secondAttribute="top" constant="70" id="ZQv-7O-uHP"/>
+                            <constraint firstItem="BbV-RK-Y32" firstAttribute="trailing" secondItem="J8v-mv-Pf9" secondAttribute="trailing" constant="20" id="thX-Qi-z9b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BbV-RK-Y32"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="YBp-Xg-90x"/>
+                    <connections>
+                        <outlet property="furiganaTableView" destination="J8v-mv-Pf9" id="Grd-CH-Cc6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n07-Bn-Kv0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="868" y="136.28185907046478"/>
         </scene>
     </scenes>
 </document>

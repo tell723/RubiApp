@@ -13,6 +13,7 @@
 		8426B77C243D9B09006DB8A5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8426B77A243D9B09006DB8A5 /* Main.storyboard */; };
 		8426B77E243D9B0D006DB8A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8426B77D243D9B0D006DB8A5 /* Assets.xcassets */; };
 		8426B781243D9B0D006DB8A5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8426B77F243D9B0D006DB8A5 /* LaunchScreen.storyboard */; };
+		8426B789243D9C36006DB8A5 /* FuriganaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8426B788243D9C36006DB8A5 /* FuriganaViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		8426B77D243D9B0D006DB8A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8426B780243D9B0D006DB8A5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8426B782243D9B0D006DB8A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8426B788243D9C36006DB8A5 /* FuriganaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuriganaViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				8426B774243D9B09006DB8A5 /* AppDelegate.swift */,
 				8426B776243D9B09006DB8A5 /* SceneDelegate.swift */,
 				8426B778243D9B09006DB8A5 /* ViewController.swift */,
+				8426B788243D9C36006DB8A5 /* FuriganaViewController.swift */,
 				8426B77A243D9B09006DB8A5 /* Main.storyboard */,
 				8426B77D243D9B0D006DB8A5 /* Assets.xcassets */,
 				8426B77F243D9B0D006DB8A5 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				8426B779243D9B09006DB8A5 /* ViewController.swift in Sources */,
 				8426B775243D9B09006DB8A5 /* AppDelegate.swift in Sources */,
 				8426B777243D9B09006DB8A5 /* SceneDelegate.swift in Sources */,
+				8426B789243D9C36006DB8A5 /* FuriganaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
